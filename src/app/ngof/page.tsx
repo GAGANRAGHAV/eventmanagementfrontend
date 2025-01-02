@@ -38,8 +38,16 @@ import { Textarea } from "@/components/ui/textarea";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+interface Project  {
+  _id: string;
+  name: string;
+  image?: string;
+  description?: string;
+  participants: { name: string }[];
+};
+
 export default function ngof() {
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState<Project[]>([]);
   const [clubDetails, setClubDetails] = useState({ name: "", logo: "" });
 
   useEffect(() => {

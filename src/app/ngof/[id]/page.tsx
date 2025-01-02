@@ -23,6 +23,10 @@ interface Project {
   description: string;
   image: string;
   moneyAllocated: string;
+  moneyrequired: string;
+  eventDate: string;
+  participants: { name: string; email: string }[];
+
   // Add other fields you expect in the project object
 }
 
@@ -61,7 +65,7 @@ export default function indi() {
     }
   };
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setEditData((prev) => ({ ...prev, [name]: value }));
   };
@@ -138,7 +142,6 @@ export default function indi() {
               </h1>
               <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
                 {project.description}
-                {console.log(project.participants)}
               </p>
             </div>
             <img

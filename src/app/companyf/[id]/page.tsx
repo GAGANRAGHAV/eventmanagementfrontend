@@ -32,6 +32,8 @@ interface Project {
   description: string;
   image: string;
   moneyAllocated: string;
+  moneyrequired: string; // or number, depending on your data type
+
   // Add other fields you expect in the project object
 }
 
