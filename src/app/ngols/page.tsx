@@ -68,10 +68,7 @@ export default function login() {
 
         const response = await axios.post(
           "https://eventmanagementbackend-o7k8.onrender.com/api/ngoregister",
-          payload,
-          {
-            headers: { "Content-Type": "multipart/form-data" },
-          }
+          payload
         );
 
         localStorage.setItem("ngoname", response.data.newNgo._id);
